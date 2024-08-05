@@ -8,6 +8,6 @@ Clone the repository
 
 Cd to the file location
 
-Execute the file using the syntax   python3 CybTCP_Sniffer.py <interface> [verbose]
+Execute the file using the syntax python3 CybTCP_Sniffer.py [interface] [verbose]
 
 Captured packets can be seen in the output file "sniffer_eth0_log.txt"
