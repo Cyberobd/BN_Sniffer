@@ -1,48 +1,51 @@
 # CybTCP_Sniffer
-# Overview
+
+## Overview
 CybTCP_Sniffer is a basic network sniffer designed to capture and analyze TCP packets. This tool helps network administrators and security professionals monitor network traffic and diagnose network issues.
 
-# Features
-Packet Capture: Captures TCP packets on specified network interfaces.
+## Features
 
-Real-time Analysis: Analyzes and displays packet details in real-time.
+__Packet Capture:__ Captures TCP packets on specified network interfaces.
 
-Filter Options: Allows filtering of packets based on IP addresses, ports, and protocols.
+__Real-time Analysis:__ Analyzes and displays packet details in real-time.
 
-Logging: Saves captured packets to log files for further analysis.
+__Logging:__ Saves captured packets to log files for further analysis.
 
-# Installation Instructions
- Clone the Repository:
+## Installation Instructions
+
+ __Clone the Repository:__
  
-git clone https://github.com/yourusername/CybTCP_Sniffer.git
+>git clone https://github.com/yourusername/CybTCP_Sniffer.git
 
-cd CybTCP_Sniffer
+>__cd CybTCP_Sniffer__
 
 
-  Install Dependencies:
+ ## Install Dependencies:
   
-  pip install scapy
+  >pip install scapy
 
 
-  # Usage
+  ## Usage
 
-  Syntax : python3 CybTCP_Sniffer.py < interface > -verbose-
+  >python3 CybTCP_Sniffer.py < interface >
+  
+ _action may require root priveledges_
 
-# Dependencies
+## Dependencies
 
 Python 3.x
 
 Scapy
 
-# Structure
+## Structure
 
-CybTCP_Sniffer.py: Main script for running the sniffer.
+__CybTCP_Sniffer.py:__ Main script for running the sniffer.
 
-dependencies: scapy
+__dependencies:__ scapy
 
-sniffer_eth0_log.txt: Directory where log files are saved.
+__sniffer_eth0_log.txt:__ where log files are stored.
 
 
-For any questions or suggestions, feel free to open an issue or contact me at mrkusimm@gmail.com
+### For any questions or suggestions, feel free to open an issue or contact me at mrkusimm@gmail.com
   
 
