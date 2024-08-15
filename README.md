@@ -27,9 +27,12 @@ __Logging:__ Saves captured packets to log files for further analysis.
 
   ## Usage
 
-  >python3 CybTCP_Sniffer.py < interface >
-  
+  >python3 CybTCP_Sniffer.py < interface > verbose
+>
+  _Replace <interface> with the name of the network interface you want to sniff packets on (e.g., eth0, wlan0, etc.)._
  _action may require root priveledges_
+
+ __This will start the packet sniffer, logging packet information to a file and also printing it to the console.__
 
 ## Dependencies
 
