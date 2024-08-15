@@ -2,7 +2,7 @@ import sys
 from scapy.all import *
 
 # Function to handle each packet
-def handle_packet(packet, log):
+def handle_packet(packet, log, verbose=False):
     # Check if the packet contains TCP layer
     if packet.haslayer(TCP):
         # Extract source and destination IP addresses
@@ -12,7 +12,10 @@ def handle_packet(packet, log):
         src_port = packet[TCP].sport
         dst_port = packet[TCP].dport
         # Write packet information to log file
-        log.write(f"TCP Connection: {src_ip}:{src_port} -> {dst_ip}:{dst_port}\n")
+        log_entry = f"TCP Connection: {src_ip}:{src_port} -> {dst_ip}:{dst_port}\n"
+        log.write(log_entry)
+        if verbose:
+            print(log_entry)  # Print the log entry if verbose mode is enabled
 
 # Main function to start packet sniffing
 def main(interface, verbose=False):
@@ -21,11 +24,8 @@ def main(interface, verbose=False):
     # Open log file for writing
     with open(logfile_name, 'w') as logfile:
         try:
-            # Start packet sniffing on specified interface with verbose output
-            if verbose:
-                sniff(iface=interface, prn=lambda pkt: handle_packet(pkt, logfile), store=0, verbose=verbose)
-            else:
-                sniff(iface=interface, prn=lambda pkt: handle_packet(pkt, logfile), store=0)
+            # Start packet sniffing on the specified interface
+            sniff(iface=interface, prn=lambda pkt: handle_packet(pkt, logfile, verbose))
         except KeyboardInterrupt:
             sys.exit(0)
 
@@ -39,5 +39,5 @@ if __name__ == "__main__":
     verbose = False
     if len(sys.argv) == 3 and sys.argv[2].lower() == "verbose":
         verbose = True
-    # Call the main function with the specified interface and verbose option
+    # Call the main function with the specified interface and verbosity setting
     main(sys.argv[1], verbose)
