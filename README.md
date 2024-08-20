@@ -19,6 +19,7 @@ __Logging:__ Saves captured packets to log files for further analysis.
 
 >__cd CybTCP_Sniffer__
 
+>chmod +x CybTCP_Sniffer.py
 
  ## Install Dependencies:
   
